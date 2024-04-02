@@ -1,6 +1,11 @@
+import Banner from "Components/Banner";
+
 const Inicio = () => {
     return (
-        <h1>Hello World!!</h1>
+        <main>
+            <Banner />
+            <h1>Hello World!!</h1>
+        </main>
     )
 }
 
