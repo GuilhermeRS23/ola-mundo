@@ -3,20 +3,26 @@ import Inicio from "./Pages/Inicio";
 import SobreMim from "./Pages/SobreMim";
 import Erro404 from "./Pages/Erro404";
 import Menu from "./Components/Menu";
+import Rodape from "Components/Rodape";
+import LayoutPadrao from "Components/LayoutPadrao";
 
-function AppRoutes() {
+const AppRoutes = () => {
   return (
-    <div>
       <BrowserRouter>
         <Menu />
+
         <Routes>
-          <Route path='/' element={<Inicio />} />
-          <Route path='/sobre_mim' element={<SobreMim />} />
+          <Route patch="/" element={<LayoutPadrao />}>
+            <Route index element={<Inicio />} />
+            <Route path='sobre_mim' element={<SobreMim />} />
+          </Route>
+
           <Route path='*' element={<Erro404 />} />
         </Routes>
+
+        <Rodape />
       </BrowserRouter>
-    </div>
-  )
+  );
 }
 
 export default AppRoutes;
