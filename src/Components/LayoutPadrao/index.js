@@ -5,6 +5,7 @@ const LayoutPadrao = () => {
     return (
         <main>
             <Banner />
+            
             <Outlet/>
         </main>
     )

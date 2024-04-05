@@ -5,23 +5,25 @@ import Erro404 from "./Pages/Erro404";
 import Menu from "./Components/Menu";
 import Rodape from "Components/Rodape";
 import LayoutPadrao from "Components/LayoutPadrao";
+import Post from "Pages/Post";
 
 const AppRoutes = () => {
   return (
-      <BrowserRouter>
-        <Menu />
+    <BrowserRouter>
+      <Menu />
 
-        <Routes>
-          <Route patch="/" element={<LayoutPadrao />}>
-            <Route index element={<Inicio />} />
-            <Route path='sobre_mim' element={<SobreMim />} />
-          </Route>
+      <Routes>
+        <Route path="/" element={<LayoutPadrao />}>
+          <Route index element={<Inicio />} />
+          <Route path="sobre_mim" element={<SobreMim />} />
+          <Route path="posts/:id" element={<Post />} />
+        </Route>
+        
+        <Route path="*" element={<Erro404 />} />
+      </Routes>
 
-          <Route path='*' element={<Erro404 />} />
-        </Routes>
-
-        <Rodape />
-      </BrowserRouter>
+      <Rodape />
+    </BrowserRouter>
   );
 }
 
