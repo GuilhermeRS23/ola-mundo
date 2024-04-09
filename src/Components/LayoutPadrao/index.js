@@ -1,12 +1,13 @@
 import Banner from "Components/Banner";
 import { Outlet } from "react-router-dom";
 
-const LayoutPadrao = () => {
+const LayoutPadrao = ({ children }) => {
     return (
         <main>
             <Banner />
-            
-            <Outlet/>
+
+            <Outlet />
+            {children}
         </main>
     )
 }
